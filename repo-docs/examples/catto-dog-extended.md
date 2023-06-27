@@ -142,7 +142,12 @@ const createAnimalStats = obsDispCreator(() => {
       console.log('Animal stats: ', payload)
     },
   }
+}, {
+  // pass options, like id; it will turn it into a Singleton
+  id: 'animal-stats'
 })
+
+createAnimalStats()
 
 const cattoDog = createCattoDog() // Animal stats: ...
 dispatchEvent('CT_MEOW') // CT meows

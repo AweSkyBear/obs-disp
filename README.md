@@ -1,10 +1,10 @@
 # Obs Disp
 
-This is for all the folks who are wondering what's a right way to write JavaScript.
+This is **for all the folks** who are wondering **what's a right way to write** JavaScript.
 
-For everyone who struggles to understand how to structure an arbitrary app for the browser. Be it small or large.
+For **everyone who struggles** to understand **how to structure** an arbitrary app for the browser. Be it small or large.
 
-And about how to keep the code clean, while retaining sanity, not bogging down into extreme amounts of painful implementation details. Without being a genius.
+And about **how to keep the code clean**, while retaining sanity, not bogging down into extreme amounts of painful implementation details. **Without being a genius**.
 
 ## The problem
 
@@ -17,11 +17,14 @@ Let's build real-life clean-code easily extensible apps! **Now**
 <div id="dialogue"/>
 
 ### Let's start with a dialogue...
+> _Somewhere in a parallel universe_
 
-_Somewhere in a parallel universe:_
+_JavaScript and a Computer talking_
 
-> :: _Imagine the Computer has a squeaky voice_
->
+<img src="repo-docs/comp-vs-js.svg"  width="500">
+
+_Imagine the Computer has a squeaky voice_
+
 > - **Computer**: Lovely JavaScript, is that you???
 > - **JavaScript**: Yes, that's me!!!
 > - **C**: But JS, why you lovely?
@@ -46,20 +49,21 @@ _Somewhere in a parallel universe:_
 > - **JS**: .. That's ALL!
 > - **C**: Surely this cannot be real!
 > - **JS**: _It is real. And don't call me Surely!_
+> - **JS**: **My name is Script... JavaScript**.
 >
 > :: { PEWWWPEWWPEWW } ERROR ERROR ERROR \<**the given universe explodes, err msg: AWESOMENESS spiked to level 9k^22**\> ERROR ERROR ERROR
 >
 > .
 
-### Pure JS vs Obs-Disp example
+## Pure JS vs Obs-Disp example
 
-Let's continue with an example
+Let's have an example.
 
 How can we create an object and trigger sth onto it? In plain JS and with obs-disp?
 
 **Plain JS**
 
-One way would be:
+One way would be (don't do this):
 
 ```js
 const createCattoDog = () => {
@@ -77,9 +81,9 @@ const cattoDog2 = createCattoDog()
 ;[
   // make them all bark and meow
   cattoDog, cattoDog2
-].forEach((cd) => {
-  cattoDog.bark() // BARKs
-  cattoDog.meow() // MEOWs
+].forEach((ct) => {
+  ct.bark() // BARKs
+  ct.meow() // MEOWs
 })
 ```
 
@@ -92,10 +96,13 @@ const { obsDispCreator, dispatchEvent, removeObs } = createAPI()
 ////////////
 
 const createCattoDog = obsDispCreator(() => {
-  const somePrivateVar = {}
+  const somePrivateVarWeCanAccessBelow = { a: 5 }
 
   return {
-    'OBS_CREATE': () => { /* if init logic needed, called just after createCattoDog() */}
+    'OBS_CREATE': () => {
+      /* if init logic needed, called just after createCattoDog() */
+      somePrivateVarWeCanAccessBelow.a = 10
+    }
     'MEOW': () => console.log('meow'),
     'BARK': () => console.log('BARK BARK'),
     'OBS_REMOVE': () => { /* do cleanup if needed */}
@@ -118,21 +125,24 @@ dispatchEvent('MEOW') // nothing happens - no catto-dogs
 
 - imperative **vs** declarative communication with the objects (in the obs-disp example you only declare that you `dispatchEvent` - interested parties can handle that)
 - the 1st doesn't scale (it's ad-hoc logic) **vs** the 2nd one has streamlined object creation, communication and removal (**you can build complete apps and flows like this and still keep the code clean**)
-- if the methods on the first don't exist (`sayMeow`, `bark`) - we get a problem **vs** if the methods (event handlers) on the 2nd don't exist - it's fine
+- if the methods on the first don't exist (`meow`, `bark`) - we get a problem **vs** if the methods (event handlers) on the 2nd don't exist - it's fine
 - no built-in cleaning mechanism **vs** managed CRUD, so to speak (create, read, update, delete)
 - **no other notable differences in this example - still using plain functions and objects**
 
-### To the point - what's this in a few words?
+## To the point - what's this in a few words?
+
+`obs-disp` is a thin wrapper for writing straight-to-the-point JavaScript
 
 - Create beautifully isolated objects (_components_, _observers_) via plain old functions
-- Use the scope of the returned (created) function (which returns the final handlers) to keep the current state of the observer (e.g. the event handlers can change this scope)
+- Use them to build UI apps, games or extend legacy apps (fits anything really)
+- Use the scope of the returned (created) function from `obsDispCreator` or `addObsDisp` (which returns the final handlers) to manage the state of the observer (e.g. the event handlers access this scope)
 - Make observers communicate to one another seamlessly (_events_)
 - No need for prior event definition (the merits of prototypal JavaScript)
 - Tap into components' lifecycle - add logic per creation or removal of those objects
 - Use your own custom events, define and reason about your flows - easily
 - You could even create child components... more on this later
 
-### Want more examples?
+## Want more examples?
 
 **Extending the CattoDog example**: for `obs-disp`'s power and flexibility to really shine,
 let's dive deeper into what we can do with it: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
@@ -141,7 +151,7 @@ Check out the **\<coming soon\>**[PSEUDO-EXAMPLES.md](TODO) for example architec
 
 Check out the **\<coming soon\>**[Usage Examples Repo](TODO) for actual code examples!
 
-### To the technical point - what's this?
+## To the technical point - what's this?
 
 - Very thin wrapper - events, components, **built-in** **Observer** / **Command** / **PubSub-like** pattern
 - ability for _declarative_ event handling and dispatch, _uni-directional_ updates/flow
@@ -171,7 +181,7 @@ Check out the [EXTENDED-README](repo-docs/EXTENDED-README.md) for even more deta
 
 ## Starters (coming soon)
 
-**\<coming soon \>**
+- [obs-disp-starter-basic](https://github.com/AweSkyBear/obs-disp-starter-basic) : obs-disp + Webpack + TypeScript + Prettier
 
 ## Useful links (coming soon)
 
