@@ -144,12 +144,11 @@ dispatchEvent('MEOW') // nothing happens - no catto-dogs
 
 ## Want more examples?
 
-**Extending the CattoDog example**: for `obs-disp`'s power and flexibility to really shine,
+- **Extending the CattoDog example**: for `obs-disp`'s power and flexibility to really shine,
 let's dive deeper into what we can do with it: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
-
-Check out the **\<coming soon\>**[PSEUDO-EXAMPLES.md](TODO) for example architectures
-
-Check out the **\<coming soon\>**[Usage Examples Repo](TODO) for actual code examples!
+- Check out the [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples) for actual live examples!
+Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/)
+- Check out the **\<coming soon\>**[PSEUDO-EXAMPLES.md](TODO) for example architectures
 
 ## To the technical point - what's this?
 
@@ -179,7 +178,7 @@ npm install obs-disp --save
 
 Check out the [EXTENDED-README](repo-docs/EXTENDED-README.md) for even more details around the ideas and motivations behind the project.
 
-## Starters (coming soon)
+## Starters
 
 - [obs-disp-starter-basic](https://github.com/AweSkyBear/obs-disp-starter-basic) : obs-disp + Webpack + TypeScript + Prettier
 
