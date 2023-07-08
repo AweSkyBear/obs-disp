@@ -1,18 +1,45 @@
 # Obs Disp
 
-This is **for all the folks** who are wondering **what's a right way to write** JavaScript.
+Create 0-coupling declarative event-bound components with functions and objects only. Build flexible apps for the browser.
 
-For **everyone who struggles** to understand **how to structure** an arbitrary app for the browser. Be it small or large.
+---
 
-And about **how to keep the code clean**, while retaining sanity, not bogging down into extreme amounts of painful implementation details. **Without being a genius**.
+- **for all the folks** who are wondering **what's a right way to write CLEAN** JavaScript.
+- for **everyone who struggles** to understand **how to structure** an arbitrary app for the browser (be it small or large)
+- and about **how to keep the code clean**, while retaining sanity, not bogging down into extreme amounts of painful implementation details
+- **...without being a genius**
 
-## The problem
+## The Problem
 
-What's the simplest form JavaScript can take?
+1. You are planning on creating a non-trivial app (you have hopes)
+2. You have a lot objects and a lot of interactions between them
+3. You have a lot of user input
+4. You have a lot of separate pieces of logic
+5. You don't know and can't predict all (or almost any) of what  you'll be building when you begin.
+6. You don't want to fall into the trap of overengeering and over-abstracting
+7. You want to be able to prototype rapidly
+8. You want something scalable for in-browser logic
+9.  You want to take back control of the flows in your application (every piece of it)
+10. You want to be able to build a game... or a SPA... or create a reusable component for anything in the browser...
+11. You want to be able to build a SPA
+12. You want sane state management (the most difficult part in front-end development)
+13. You don't want to be complying to anything other than pure JavaScript (no heavy or constraining libraries and frameworks)
+14. You are scared of huge and ugly abstractions which go wrong
+15. You are scared of OOP and huge class hierarchies (you got into a mess, didn't you)
+16. You are scared of *automatic* and *subtle* logic, autotriggered due to some convention somebody thought was useful
+17. You are sick of cohorts of concepts to learn to do a simple input with 3 buttons and a text field (for example ;) )
+18. You are wondering how are you supposed to come up with all that logic and write it cleanly in an ever-expanding app
+19. You believe there must be a way...
 
-Let's build real-life clean-code easily extensible apps! **Now**
+**Then... what's** the simplest *useful* form JavaScript can take in these cases?
 
-## What's this?  
+## The Solution
+
+This is `obs-disp`. A combination of a few most useful software patterns for managing state, streamlined in way *not to harm* JavaScript *but gain from it in a natural way*.
+
+Let's build real-life clean-code easily extensible apps! **Now!**
+
+## What's obs-disp?  
 
 <div id="dialogue"/>
 
@@ -25,8 +52,8 @@ _JavaScript and a Computer talking_
 
 _Imagine the Computer has a squeaky voice_
 
-> - **Computer**: Lovely JavaScript, is that you???
-> - **JavaScript**: Yes, that's me!!!
+> - **COMPUTER**: Lovely JavaScript, is that you???
+> - **JAVASCRIPT**: Yes, that's me!!!
 > - **C**: But JS, why you lovely?
 > - **JS**: Because I am simple, I am beautiful
 > - **C**: I don't understand _beautiful_, define _beautiful_..
@@ -55,7 +82,7 @@ _Imagine the Computer has a squeaky voice_
 >
 > .
 
-## Pure JS vs Obs-Disp example
+## Pure JS vs ObsDisp example
 
 Let's have an example.
 
