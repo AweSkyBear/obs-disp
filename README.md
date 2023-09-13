@@ -6,7 +6,7 @@ Create 0-coupling declarative event-bound components with functions and objects 
 
 - **for all the folks** who are wondering **what's a right way to write CLEAN** JavaScript.
 - for **everyone who struggles** to understand **how to structure** an arbitrary app for the browser (be it small or large)
-- and about **how to keep the code clean**, while retaining sanity, not bogging down into extreme amounts of painful implementation details
+- and about **how to keep the code clean**, while retaining sanity, not bogging down into extreme amounts of painful implementation details or heavy abstractions
 - **...without being a genius**
 
 ## The Problem
@@ -21,10 +21,9 @@ Create 0-coupling declarative event-bound components with functions and objects 
 8. You want something scalable for in-browser logic
 9.  You want to take back control of the flows in your application (every piece of it)
 10. You want to be able to build a game... or a SPA... or create a reusable component for anything in the browser...
-11. You want to be able to build a SPA
 12. You want sane state management (the most difficult part in front-end development)
 13. You don't want to be complying to anything other than pure JavaScript (no heavy or constraining libraries and frameworks)
-14. You are scared of huge and ugly abstractions which go wrong
+14. You are scared of huge and ugly abstractions which go wrong or turn on implicit logic resulting in hours of debugging
 15. You are scared of OOP and huge class hierarchies (you got into a mess, didn't you)
 16. You are scared of *automatic* and *subtle* logic, autotriggered due to some convention somebody thought was useful
 17. You are sick of cohorts of concepts to learn to do a simple input with 3 buttons and a text field (for example ;) )
@@ -171,9 +170,9 @@ dispatchEvent('MEOW') // nothing happens - no catto-dogs
 
 ## Want more examples?
 
-- **Extending the CattoDog example**: for `obs-disp`'s power and flexibility to really shine,
+- [Extending the CattoDog example](repo-docs/examples/catto-dog-extended.md): for `obs-disp`'s power and flexibility to really shine,
 let's dive deeper into what we can do with it: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
-- Check out the [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples) for actual live examples!
+- [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples) for actual live examples!
 Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/)
 - Check out the **\<coming soon\>**[PSEUDO-EXAMPLES.md](TODO) for example architectures
 
@@ -181,20 +180,19 @@ Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/
 
 - Very thin wrapper - events, components, **built-in** **Observer** / **Command** / **PubSub-like** pattern
 - ability for _declarative_ event handling and dispatch, _uni-directional_ updates/flow
-- each component created via the API is called **_OD_** (pronounced [odi]) - **observer**, **dispatcher**, **observing-dispatcher** or **obs-disp** (because it can both listen and dispatch events);
+- each component created via the API is called **_OD_** (pronounced [o:di]) - **observer**, **dispatcher**, **observing-dispatcher** or **obs-disp** (because it can both listen and dispatch events);
   - this blurs the boundary between the Observer and the Command pattern (and has a PubSub-like flavor)
 - Enables uni-directional flows/architectures and 0-coupling components
 - Precise control-flow: seamless events handled by seamless-ly intergratable components (code right after you draw your flow-chart!)
 - Component hierarchy is supported (you can add child observers) - has a few benefits (more on this later)
 - Everything is functions and objects only - **no** `class`es, `this`, inheritance, `new` - keep it simple / focus on what your app will do, not how
 - Useful when **dealing with many objects** and pieces of logic (imagine you could create an observer for any piece of logic,
-- Useful for any kind of front-end: **html/dom**, **games (canvas)**, **webgl** (sure)
-  - e.g. a few examples for different kinds of apps:
-    - **HTML5 apps** (e.g. SPAs, adding dynamic stuff to html pages): `createSidebar`, `createNavigationBar`, `createHTMLEvents` (a generic dispatcher of HTML events, surfacing these to other observers), HTML component ODs: `createInput`, `createButton`
-    - **games**: `createGameLoop` (dispatches `update` event every frame)), `createPlayer`, `createLevel`, `createHealthBar`
+- Useful for any kind of front-end: **html/dom**, **games (canvas)**, **webgl** (sure), **legacy apps**
+  - e.g. a **few examples** for different kinds of apps:
+    - **HTML5 apps** (e.g. SPAs, adding dynamic stuff to html pages): `createSidebar`, `createNavigationBar`, `createHTMLEvents` (a generic dispatcher of HTML events, surfacing these to other observers), HTML component ODs: `createInput`, `createButton`, `createModal`
+    - **games**: `createGameLoop` (dispatches `update` event every frame)), `createPlayer`, `createLevel`, `createHealthBar` (those all to act as singletons/controllers); `createFoe` - create multiple instances whenever needed
     - **legacy / any JS applications**: use `addObsDisp` to inline an observer anywhere (allowing parts of an old app to communicate with other parts of it), remove it just as easily as part of lifecycle events
 - Usable with **any library**: as an elegant state management (and object communication) solution for new or legacy apps
-- Inject inside of any existing code - **legacy apps** too can benefit from this
 - Full TypeScript support for the best development experience
 
 ## Install
