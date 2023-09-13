@@ -284,7 +284,7 @@ export const __addObsDisp =
           },
         })
 
-        API.onObsCreated(clone(observer.options))
+        API.onObsCreated && API.onObsCreated(clone(observer.options))
       })
 
       return observer
@@ -402,7 +402,7 @@ const _handleObsRemove = (
   if (existingObs?.handleEvent) {
     existingObs.handleEvent({ name: obsDispEvents.OBS_REMOVE, payload: existingObs.options })
 
-    API.onObsRemoved(clone(existingObs.options))
+    API.onObsRemoved && API.onObsRemoved(clone(existingObs.options))
   }
   // clean up
   _removeObsCleanup(map, existingObs)
