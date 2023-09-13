@@ -12,5 +12,5 @@ export {
 export { payload, payloadPath, payloadPathOr, payloadProp, payloadPropOr } from './getters'
 export { compose, pipe } from './func'
 
-export { IEvent, constructEvents, Ev } from './events/index'
+export { IEvent, TEventTarget, constructEvents, Ev, isEventName, isFullEvent } from './events/index'
 export { obsDispEvents, ObsDispCreate } from './events/obsDispEvents'
