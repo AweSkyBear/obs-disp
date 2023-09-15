@@ -129,7 +129,9 @@ export const __dispatchEvent =
       })
     } else if (useTargetObservers) {
       if (!usePredicateTarget) {
-        ;(targets as IObserver[]).forEach((observer) => observer.handleEvent(_event))
+        ;(targets as IObserver[]).forEach(
+          (observer) => observer.handleEvent && observer.handleEvent(_event),
+        )
       } else {
         const checkPasses = target as Predicate<IObserverOptions>
         ;(targets as IObserver[]).forEach(
