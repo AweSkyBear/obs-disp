@@ -337,7 +337,7 @@ const _removeObs = (
   obs: IObserver,
   skipRelativesCheck = false,
 ) => {
-  const exists = map.get(obs.options.id)
+  const exists = map.get(obs?.options?.id)
   if (!exists) {
     API.onWarn && API.onWarn({ msg: `No observer found to remove`, params: { obs } })
     return
@@ -384,10 +384,10 @@ const _handleObsRemove = (
   obs: IObserver,
   skipChildren: boolean = false,
 ) => {
-  const existingObs = map.get(obs.options.id)
+  const existingObs = map.get(obs?.options?.id)
 
   // branch: if has parentId -> remove it from the parent's children !!!
-  if (obs.parentId) {
+  if (obs?.parentId) {
     const parentObs = map.get(obs.parentId)
     parentObs?.removeOD(obs, true)
   }
