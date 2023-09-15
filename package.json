@@ -1,6 +1,6 @@
 {
   "name": "obs-disp",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Create 0-coupling declarative event-bound components with functions and objects only. Build flexible apps for the browser.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
