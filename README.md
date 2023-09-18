@@ -1,8 +1,15 @@
 # Obs Disp
 
-Create 0-coupling declarative event-bound components with functions and objects only. Build flexible apps for the browser.
+Create 0-coupling declarative event-bound components with functions and objects only. Build flexible apps or games for the browser.
 
----
+## In plain language, please..
+
+It's a JavaScript/TypeScript library for clean and easy object creation and communcation between the objects
+which does not care what other tools or libs you already use (if any).
+
+It works along *anything* because it adds almost *nothing* to your tech stack.
+
+## Who is this for?
 
 - **for all the folks** who are wondering **what's a right way to write CLEAN** JavaScript.
 - for **everyone who struggles** to understand **how to structure** an arbitrary app for the browser (be it small or large)
@@ -36,11 +43,10 @@ Create 0-coupling declarative event-bound components with functions and objects 
 
 This is `obs-disp`. A combination of a few most useful software patterns for managing state, streamlined in way *not to harm* JavaScript *but gain from it in a natural way*.
 
-Let's build real-life clean-code easily extensible apps! **Now!**
+Let's build real-life clean-code easily extensible apps/games/experiments!
+Via a tool suited specially for the JS world! **Now!**
 
 ## What's obs-disp?  
-
-<div id="dialogue"/>
 
 ### Let's start with a dialogue...
 > _Somewhere in a parallel universe_
@@ -83,7 +89,7 @@ _Imagine the Computer has a squeaky voice_
 
 ## Pure JS vs ObsDisp example
 
-Let's have an example.
+Let's have an example. You like cats? You like dogs? Good! Because we breeded them together... we now have a **CattoDog**!
 
 How can we create an object and trigger sth onto it? In plain JS and with obs-disp?
 
@@ -171,10 +177,10 @@ dispatchEvent('MEOW') // nothing happens - no catto-dogs
 ## Want more examples?
 
 - [Extending the CattoDog example](repo-docs/examples/catto-dog-extended.md): for `obs-disp`'s power and flexibility to really shine,
-let's dive deeper into what we can do with it: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
+let's dive deeper into what we can do with it, building up on the **CattoDog** from above: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
 - [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples) for actual live examples!
 Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/)
-- Check out the **\<coming soon\>**[PSEUDO-EXAMPLES.md](TODO) for example architectures
+- [PSEUDO-CODE-EXAMPLES.md](./repo-docs/PSEUDO-CODE-EXAMPLES.md) - get an idea of different use cases
 
 ## To the technical point - what's this?
 
@@ -197,19 +203,26 @@ Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/
 
 ## Install
 
-npm install obs-disp --save
+`npm install obs-disp --save`
 
-## What's next?
+## Motivation
 
-Check out the [EXTENDED-README](repo-docs/EXTENDED-README.md) for even more details around the ideas and motivations behind the project.
+Check out the [EXTENDED-README](./repo-docs/EXTENDED-README.md) for even more details around the ideas and motivations behind the project.
+
+## Docs
+
+Check out the [repo-docs](./repo-docs/) for all available documentation with this repository. Notable `.md`s include:
+- [`EXTENDED-README`](repo-docs/EXTENDED-README.md)
+- [`CONVENTIONS-DESIGN-PRINCIPLES`](repo-docs/CONVENTIONS-DESIGN-PRINCIPLES.md)
+- [`PSEUDO-CODE-EXAMPLES`](repo-docs/PSEUDO-CODE-EXAMPLES.md)
 
 ## Starters
 
 - [obs-disp-starter-basic](https://github.com/AweSkyBear/obs-disp-starter-basic) : obs-disp + Webpack + TypeScript + Prettier
 
-## Useful links (coming soon)
+## Useful links
 
-**\<coming soon \>**
+- [Class inheritance is broken by design](https://www.therealjavascript.com/blog/thoughts/inheritance-is-broken-by-design/) (especially for  JavaScript ;) )
 
 ## Development status
 
