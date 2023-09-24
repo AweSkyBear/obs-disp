@@ -174,13 +174,21 @@ dispatchEvent('MEOW') // nothing happens - no catto-dogs
 - Use your own custom events, define and reason about your flows - easily
 - You could even create child components... more on this later
 
-## Want more examples?
+## More examples!
 
 - [Extending the CattoDog example](repo-docs/examples/catto-dog-extended.md): for `obs-disp`'s power and flexibility to really shine,
 let's dive deeper into what we can do with it, building up on the **CattoDog** from above: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
 - [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples) for actual live examples!
 Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/)
 - [PSEUDO-CODE-EXAMPLES.md](./repo-docs/PSEUDO-CODE-EXAMPLES.md) - get an idea of different use cases
+
+
+## Docs
+
+Check out the [repo-docs](./repo-docs/) for all available documentation with this repository. Notable `.md`s include:
+- [`EXTENDED-README`](repo-docs/EXTENDED-README.md)
+- [`CONVENTIONS-DESIGN-PRINCIPLES`](repo-docs/CONVENTIONS-DESIGN-PRINCIPLES.md)
+- [`PSEUDO-CODE-EXAMPLES`](repo-docs/PSEUDO-CODE-EXAMPLES.md)
 
 ## To the technical point - what's this?
 
@@ -208,13 +216,6 @@ Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/
 ## Motivation
 
 Check out the [EXTENDED-README](./repo-docs/EXTENDED-README.md) for even more details around the ideas and motivations behind the project.
-
-## Docs
-
-Check out the [repo-docs](./repo-docs/) for all available documentation with this repository. Notable `.md`s include:
-- [`EXTENDED-README`](repo-docs/EXTENDED-README.md)
-- [`CONVENTIONS-DESIGN-PRINCIPLES`](repo-docs/CONVENTIONS-DESIGN-PRINCIPLES.md)
-- [`PSEUDO-CODE-EXAMPLES`](repo-docs/PSEUDO-CODE-EXAMPLES.md)
 
 ## Starters
 

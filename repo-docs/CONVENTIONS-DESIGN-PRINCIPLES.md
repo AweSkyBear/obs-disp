@@ -39,9 +39,10 @@ Examples (domain: html5 apps):
 
 Examples (domain: any arbitrary app in the browser):
 
-- `create` - creates an input element, manages lifecycle, tracks and dispatches events for its instance
-- `createTextarea` - creates an textarea element... rest is similar to the above
-- `createButton` - ... you got the idea
+- `createResizeTracker` - attaches `resize` handler on the document, dispatches `DOCUMENT_RESIZE`
+- `createHTMLEvents` - tracks all events on the document and dispatches either a generic event (example: `HTML_EV_ANY`) with `payload` the event name and arguments, or/and also dispatches events which other components can listen to (e.g. `HTML_EV_CLICK`, `HTML_EV_DRAG_START`, `HTML_EV_INPUT`, etc.))
+- `createCalculateLandArea` - service-like - accepts an event to request some work done (e.g. `LAND_AREA_REQUEST_CALCULATE`) and dispatches back an event when the work is done: `LAND_AREA_CALCULATED` with the respective result payload
+- `createCanvasDrawing` - contextual controller - listens for events and draws to a `canvas` element for a drawing app, for example: `BRUSH_STROKE` (with payload of the position and the ), `PAINT_FILL` (with payload the position and any other parameters regarding the fill), `COLOR_SET_MAIN` - updates the internal `state` to have the main color used in other events. `COLOR_SET_SECONDARY` - updates the internal `state` so that tools use that as a secondary color
 
 #### Single file for every OD
 
@@ -76,7 +77,7 @@ const createCounter = obsDispCreator(() => {
     const state = {
         count: 0,
         counterEl: null as HTMLElement
-    },
+    }
 
     return {
         OBS_CREATE: () => {
@@ -105,7 +106,7 @@ const createTicTacToeGame = obsDispCreator(() => {
     const state = {
         // here is our state
         board: initBoard(),
-    },
+    }
 
     const checkGameWon = () => { /* has access to state */ }
     const checkGameLost = () => { /* has access to state */ }
@@ -123,13 +124,12 @@ const createTicTacToeGame = obsDispCreator(() => {
 
 const initBoard = () => { /* return a 2d array for the board */ }
 
-
 // createRenderBoard.ts
 const createBoardRenderer = obsDispCreator(() => {
     // here is our state
     const state = {
         boardElements: [] as HTMLElement[]
-    },
+    }
 
     return {
         OBS_CREATE: () => {
@@ -163,3 +163,5 @@ These functions are accessible only from the OD instance and do not polute the m
 ## Design Principles
 
 \<work in progress\>
+
+Note: you can find real usages on the [Usage Examples Page](https://aweskybear.github.io/obs-disp-examples/) and [Repo](https://github.com/AweSkyBear/obs-disp-examples)
