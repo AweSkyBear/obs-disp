@@ -12,6 +12,7 @@ It works along *anything* because it adds almost *nothing* to your tech stack.
 ## Who is this for?
 
 - **for all the folks** who are wondering **what's a right way to write CLEAN** JavaScript.
+- when you need a **rapid way to code complex flows**
 - for **everyone who struggles** to understand **how to structure** an arbitrary app for the browser (be it small or large)
 - and about **how to keep the code clean**, while retaining sanity, not bogging down into extreme amounts of painful implementation details or heavy abstractions
 - **...without being a genius**
@@ -35,7 +36,7 @@ It works along *anything* because it adds almost *nothing* to your tech stack.
 16. You are scared of *automatic* and *subtle* logic, autotriggered due to some convention somebody thought was useful
 17. You are sick of cohorts of concepts to learn to do a simple input with 3 buttons and a text field (for example ;) )
 18. You are wondering how are you supposed to come up with all that logic and write it cleanly in an ever-expanding app
-19. You believe there must be a way...
+19. You believe **there must be a way**...
 
 **Then... what's** the simplest *useful* form JavaScript can take in these cases?
 
@@ -46,7 +47,23 @@ This is `obs-disp`. A combination of a few most useful software patterns for man
 Let's build real-life clean-code easily extensible apps/games/experiments!
 Via a tool suited specially for the JS world! **Now!**
 
-## What's obs-disp?  
+## Sample Uses?
+
+1. **Interactivity to an HTML page via JS/TS** - no additional libraries
+   - examples: you want interactivity on the page, object creation and removal on the fly plus a lot of events to be attached - a perfect usecase for `obs-disp`
+2. **A Single Page Application**
+   - examples: instead of React or Angular or Vue, you could make use of `obs-disp` for this, only adding this thin library to your existing stack (which still can be no-other-library), e.g. dynamically create page elements which can talk to each other and be created/removed at any point
+   - note: you could even use this *with* existing solutions like React, Angular, Vue - as an alternative state/store management solution - **often much cleaner and easier state management** than popular libraries like... Redux
+3. **A JavaScript/TypeScript game - no additional libraries**
+   - examples: a `canvas` game or even a plain DOM game with very clean object CRUD
+4. **Any HTML5 app**
+   - examples: any arbitrary tool for the web, like a drawing app, a browser extension, a simple experiment in the browser
+5. **A JavaScript/TypeScript game - wrap any existing libraries** (for saner and easier state management)
+   - examples: use `obs-disp` in combination with PhaserJS, PixiJS, ThreeJS, &lt;anything-JS&gt; to create and manage object lifecycle and communication **easily**
+
+See the [Examples](#pure-js-vs-obsdisp-example) and Docs sections to gain a better idea how `obs-disp` code looks.
+
+## What's obs-disp?
 
 ### Let's start with a dialogue...
 > _Somewhere in a parallel universe_
@@ -98,6 +115,7 @@ How can we create an object and trigger sth onto it? In plain JS and with obs-di
 One way would be (don't do this):
 
 ```js
+// this is NOT using obs-disp
 const createCattoDog = () => {
   const somePrivateVar = {}
 
@@ -122,6 +140,8 @@ const cattoDog2 = createCattoDog()
 **obs-disp**
 
 ```js
+// this is how you'd do it the obs-disp way
+
 // init API
 import { createAPI } from 'obs-disp'
 const { obsDispCreator, dispatchEvent, removeObs } = createAPI()
@@ -150,7 +170,7 @@ dispatchEvent('MEOW') // all catto-dogs will MEOW
 removeObs(cattoDog)
 removeObs(cattoDog2)
 
-dispatchEvent('MEOW') // nothing happens - no catto-dogs
+dispatchEvent('MEOW') // nothing happens - no catto-dogs exist
 ```
 
 **Key Differences between the 2 examples**:
@@ -160,6 +180,21 @@ dispatchEvent('MEOW') // nothing happens - no catto-dogs
 - if the methods on the first don't exist (`meow`, `bark`) - we get a problem **vs** if the methods (event handlers) on the 2nd don't exist - it's fine
 - no built-in cleaning mechanism **vs** managed CRUD, so to speak (create, read, update, delete)
 - **no other notable differences in this example - still using plain functions and objects**
+
+## More examples!
+
+- [Extending the CattoDog example](repo-docs/examples/catto-dog-extended.md): for `obs-disp`'s power and flexibility to really shine,
+let's dive deeper into what we can do with it, building up on the **CattoDog** from above: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
+- [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples) for actual live examples!
+Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/)
+- [PSEUDO-CODE-EXAMPLES.md](./repo-docs/PSEUDO-CODE-EXAMPLES.md) - get an idea of different use cases
+
+## Docs
+
+Check out the [repo-docs](./repo-docs/) for all available documentation with this repository. Notable `.md`s include:
+- [`EXTENDED-README`](repo-docs/EXTENDED-README.md)
+- [`CONVENTIONS-DESIGN-PRINCIPLES`](repo-docs/CONVENTIONS-DESIGN-PRINCIPLES.md)
+- [`PSEUDO-CODE-EXAMPLES`](repo-docs/PSEUDO-CODE-EXAMPLES.md)
 
 ## To the point - what's this in a few words?
 
@@ -173,22 +208,6 @@ dispatchEvent('MEOW') // nothing happens - no catto-dogs
 - Tap into components' lifecycle - add logic per creation or removal of those objects
 - Use your own custom events, define and reason about your flows - easily
 - You could even create child components... more on this later
-
-## More examples!
-
-- [Extending the CattoDog example](repo-docs/examples/catto-dog-extended.md): for `obs-disp`'s power and flexibility to really shine,
-let's dive deeper into what we can do with it, building up on the **CattoDog** from above: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
-- [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples) for actual live examples!
-Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/)
-- [PSEUDO-CODE-EXAMPLES.md](./repo-docs/PSEUDO-CODE-EXAMPLES.md) - get an idea of different use cases
-
-
-## Docs
-
-Check out the [repo-docs](./repo-docs/) for all available documentation with this repository. Notable `.md`s include:
-- [`EXTENDED-README`](repo-docs/EXTENDED-README.md)
-- [`CONVENTIONS-DESIGN-PRINCIPLES`](repo-docs/CONVENTIONS-DESIGN-PRINCIPLES.md)
-- [`PSEUDO-CODE-EXAMPLES`](repo-docs/PSEUDO-CODE-EXAMPLES.md)
 
 ## To the technical point - what's this?
 
@@ -223,7 +242,10 @@ Check out the [EXTENDED-README](./repo-docs/EXTENDED-README.md) for even more de
 
 ## Useful links
 
+- [State management for React apps (Redux)](https://medium.com/@veeralpatel/things-ive-learned-about-state-management-for-react-apps-174b8bde87fb)
+  - this may be irrelevant to obs-disp but it mentiones examples on where state management can be useful; now imaging instead of using React+Redux to create objects with obs-disp which track/keep their own state and share it seemlessly via OD events ;)
 - [Class inheritance is broken by design](https://www.therealjavascript.com/blog/thoughts/inheritance-is-broken-by-design/) (especially for  JavaScript ;) )
+  - do *not* take this article's title literally but also note that you could create full-fledged apps without a dime of inehritance (obs-disp objects do not and will probably never support it, for a reason!)
 
 ## Development status
 
@@ -234,3 +256,8 @@ and are being tested to this point. The project itself has been tweaked quite a 
 are possible and also allowed as per [Semantic Release's Initial Dev Phase - 0.\*.\*](https://semver.org/#how-should-i-deal-with-revisions-in-the-0yz-initial-development-phase) but will be kept to minimum (and outside of top-level APIs).
 
 **Expect this README (and other .md files in repo-docs/) to get further updates.**
+
+## Found it useful?
+
+Star ✨ and share this project so that it can help other people too!
+Thank you!
