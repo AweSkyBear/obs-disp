@@ -242,6 +242,8 @@ Check out the [EXTENDED-README](./repo-docs/EXTENDED-README.md) for even more de
 
 ## Useful links
 
+- [Obs Disp Project Page](https://aweskybear.github.io/obs-disp)
+  - just a list of all project-related links
 - [State management for React apps (Redux)](https://medium.com/@veeralpatel/things-ive-learned-about-state-management-for-react-apps-174b8bde87fb)
   - this may be irrelevant to obs-disp but it mentiones examples on where state management can be useful; now imaging instead of using React+Redux to create objects with obs-disp which track/keep their own state and share it seemlessly via OD events ;)
 - [Class inheritance is broken by design](https://www.therealjavascript.com/blog/thoughts/inheritance-is-broken-by-design/) (especially for  JavaScript ;) )
