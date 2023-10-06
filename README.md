@@ -181,12 +181,16 @@ dispatchEvent('MEOW') // nothing happens - no catto-dogs exist
 - no built-in cleaning mechanism **vs** managed CRUD, so to speak (create, read, update, delete)
 - **no other notable differences in this example - still using plain functions and objects**
 
-## More examples!
+## More examples / showcase!
 
-- [Extending the CattoDog example](repo-docs/examples/catto-dog-extended.md): for `obs-disp`'s power and flexibility to really shine,
+- **small**: [Extending the CattoDog example](repo-docs/examples/catto-dog-extended.md):
+  - for `obs-disp`'s power and flexibility to really shine,
 let's dive deeper into what we can do with it, building up on the **CattoDog** from above: [repo-docs/examples/catto-dog-extended.md](repo-docs/examples/catto-dog-extended.md)
-- [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples) for actual live examples!
-Here is its [live examples page](https://aweskybear.github.io/obs-disp-examples/)
+- **game**: [A full fledged HTML5 game: *Infinitum Labyrinth - Space Un-LIMITed*](https://github.com/AweSkyBear/LD54-Infinitum-Labyrinth-Space-Un-LIMITed)
+  - tapping into objects' lifecycle and defining them declaratively works for the easy creation of a lot of dynamics on the page - this game is a very dynamic and rich SPA in itself
+- **API**: [Usage Examples Repo](https://github.com/AweSkyBear/obs-disp-examples)
+  - actual live examples with basic API usages and small self-contained examples (like an AutoCounter component)
+  - [Live Examples Page](https://aweskybear.github.io/obs-disp-examples/)
 - [PSEUDO-CODE-EXAMPLES.md](./repo-docs/PSEUDO-CODE-EXAMPLES.md) - get an idea of different use cases
 
 ## Docs
